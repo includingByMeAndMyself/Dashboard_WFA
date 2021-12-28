@@ -16,10 +16,6 @@ namespace Dashboard
         public Dashboard()
         {
             InitializeComponent();
-            //pnlNav.Height = btnDashboard.Height;
-            //pnlNav.Top = btnDashboard.Top;
-            //pnlNav.Left = btnDashboard.Left;
-            //btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -91,6 +87,13 @@ namespace Dashboard
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Dashboard_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.Capture = false;
+            Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
+            this.WndProc(ref m);
         }
     }
 }
