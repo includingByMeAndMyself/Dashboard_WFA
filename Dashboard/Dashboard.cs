@@ -11,15 +11,15 @@ using System.Runtime.InteropServices;
 
 namespace Dashboard
 {
-    public partial class Form1 : Form
+    public partial class Dashboard : Form
     {
-        public Form1()
+        public Dashboard()
         {
             InitializeComponent();
-            pnlNav.Height = btnDashboard.Height;
-            pnlNav.Top = btnDashboard.Top;
-            pnlNav.Left = btnDashboard.Left;
-            btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
+            //pnlNav.Height = btnDashboard.Height;
+            //pnlNav.Top = btnDashboard.Top;
+            //pnlNav.Left = btnDashboard.Left;
+            //btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -86,6 +86,11 @@ namespace Dashboard
         private void btnSettings_Leave(object sender, EventArgs e)
         {
             btnSettings.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
